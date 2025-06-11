@@ -36,14 +36,20 @@ private:
 			output << "\033[0;30min " << __func__ << "\033[0m ";
 
 		switch (level) {
-			case 1:
+			case 1: // info
 				output << "\033[34;1m[i]\033[0m " << content << "\n";
 				break;
-			case 2:
+			case 2: // warning
 				output << "\033[0;33m[!]\033[0m " << content << "\n";
 				break;
-			case 3:
+			case 3: // error
 				output << "\033[0;31m[x]\033[0m " << content << "\n";
+				break;
+			case 4: // verbose
+				output << "\033[0;36m[v]\033[0m " << content << "\n";
+				break;
+			case 5: // debug
+				output << "\033[0;35m[d]\033[0m " << content << "\n";
 				break;
 		}
 

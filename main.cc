@@ -1,9 +1,8 @@
-#include <cstdio>
-
 #include "logger/logger.h"
+#include "git_version.h"
 
 int main() {
-	printf("yet another lightweight logger (v0.0.1 BETA-DEV [c4bde5])\n");
+	printf("yet another lightweight logger (developer [%s])\n", GIT_COMMIT_HASH);
 	
 	// create logger object
 	logger logger;
@@ -15,6 +14,8 @@ int main() {
 	logger.log(logger::INFO, "this is an info message!");
 	logger.log(logger::WARNING, "this is a warning message!");
         logger.log(logger::ERROR, "this is an error message!");
+	logger.log(logger::VERBOSE, "this is a verbose message!");
+	logger.log(logger::DEBUG, "this is a debug message!");
 
 	return 0;
 }
